@@ -515,7 +515,7 @@
       p.tournaments.forEach((t, idx) => {
         html += '<div class="tournament-card" id="t-card-' + idx + '">';
         html += '<button class="tournament-header" onclick="toggleTournament(' + idx + ')">';
-        html += '<span>' + t.tournamentName + (t.date ? ' <span style="font-size: 0.75rem; color: #888888; font-weight: normal; margin-left: 0.5rem;">(' + t.date + ')</span>' : '') + '</span>';
+        html += '<span><a href="' + t.url + '" target="_blank" onclick="event.stopPropagation()" style="color: #0055aa; text-decoration: underline;">' + t.tournamentName + '</a>' + (t.date ? ' <span style="font-size: 0.75rem; color: #888888; font-weight: normal; margin-left: 0.5rem;">(' + t.date + ')</span>' : '') + '</span>';
         html += '<div class="tournament-meta">';
         html += '<span>Record: ' + t.record + '</span>';
         html += '<span class="placement-badge">' + t.placement + '</span>';
@@ -814,7 +814,7 @@
         p.tournaments.forEach((t, tIdx) => {
           html += '<div class="tournament-card" id="comp-t-card-' + cIdx + '-' + tIdx + '" style="margin-bottom: 0.4rem; border-color: #dddddd;">';
           html += '<button class="tournament-header" onclick="toggleCompareTournament(' + cIdx + ',' + tIdx + ')" style="padding: 0.5rem 0.75rem; font-size: 0.8rem; background-color: #ffffff;">';
-          html += '<span>' + t.tournamentName + '</span>';
+          html += '<span><a href="' + t.url + '" target="_blank" onclick="event.stopPropagation()" style="color: #0055aa; text-decoration: underline;">' + t.tournamentName + '</a></span>';
           html += '<div class="tournament-meta">';
           html += '<span>Record: ' + t.record + '</span>';
           html += '<span class="placement-badge">' + t.placement + '</span>';
